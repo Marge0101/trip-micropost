@@ -48,10 +48,20 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+  #<<: *default
   adapter:  postgresql
   encoding: unicode
-  pool:5
-  #<<: *default
+  pool: 5
   database: trip-micropost_production
   username: trip-micropost
   password: <%= ENV['TRIP-MICROPOST_DATABASE_PASSWORD'] %>
+  
+  
+  production:
+  #<<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: microposts_production
+  username: microposts
+  password: <%= ENV['MICROPOSTS_DATABASE_PASSWORD'] %>
